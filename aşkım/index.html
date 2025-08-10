@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>💌 Senin İçin — Özel Site</title>
+    <meta name="description" content="Sana özel, fotoğraf gerektirmeyen şık ve modern sevgili sayfası." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-grid">
+            <a class="brand" href="#">💖 Senin İçin</a>
+            <nav class="nav" id="nav">
+                <a href="#about">Hakkında</a>
+                <a href="#story">Hikaye</a>
+                <a href="#gifts">Sürprizler</a>
+                <a href="#notes">Notlar</a>
+                <a href="#contact">İletişim</a>
+            </nav>
+            <button id="navToggle" aria-label="Menüyü aç" class="nav-toggle">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1>Senin için tasarlandı<span class="accent"> — özel ve saf</span></h1>
+                    <p class="lead">Fotoğraf yok. Sadece hisler, küçük animasyonlar ve zarif detaylar. Bu sayfa sana
+                        özel anları saklamak için.</p>
+                    <div class="hero-cta">
+                        <a class="btn" href="#story">Hikayemiz</a>
+                        <button class="btn ghost" id="openLetter">Gizli Mektup</button>
+                    </div>
+                </div>
+                <div class="hero-card" aria-hidden="false">
+                    <!-- Grafik yerine stilize SVG/şekiller -->
+                    <svg class="heart" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 21s-7.5-4.9-9.6-8.1A6 6 0 0 1 7 3.5 6.2 6.2 0 0 1 12 6.7 6.2 6.2 0 0 1 17 3.5a6 6 0 0 1 4.6 9.4C19.5 16.1 12 21 12 21z" />
+                    </svg>
+                    <ul class="stats">
+                        <li><strong>365</strong><span>gün fikir</span></li>
+                        <li><strong>24/7</strong><span>kalp atışı</span></li>
+                        <li><strong>∞</strong><span>sevgi</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="container section">
+            <h2>Hakkında</h2>
+            <p>Bu bölümde onun sevdiği şeyleri, küçük alışkanlıklarını, favori sözlerini yazabilirsin. Fotoğraf yok, ama
+                kişilik ve detay var. Örnek:</p>
+            <ul class="features">
+                <li><strong>Favori içecek:</strong> Bitki çayı</li>
+                <li><strong>Rutin:</strong> Sabah müziği, akşam kitap</li>
+                <li><strong>Takma ad:</strong> Güneş</li>
+            </ul>
+        </section>
+
+        <section id="story" class="section alt">
+            <div class="container">
+                <h2>Hikayemiz</h2>
+                <ol class="timeline">
+                    <li><time>2025-06-19</time>
+                        <p>Tanışma</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="gifts" class="section">
+            <div class="container">
+                <h2>Sürprizler / Küçük Hediyeler</h2>
+                <p>Fotoğraf kullanmadan sunabileceğin içerikler: dijital notlar, gizli çalma listesi linkleri, küçük
+                    şiirler, ipuçlarıyla açılan sürprizler.</p>
+
+                <div class="grid-cards">
+                    <article class="card">
+                        <h3>Gizli Şiir</h3>
+                        <p class="muted">Şifreyle açılan kısa şiir (CSS modal örneği aşağıda).</p>
+                        <button class="btn" id="openPoem">Şiiri Gör</button>
+                    </article>
+
+                    <article class="card">
+                        <h3>Özel Playlist</h3>
+                        <p class="muted">Spotify / YouTube linki ekle (isteğe bağlı).</p>
+                        <a class="btn ghost" href="#" aria-disabled="true">Yakında</a>
+                    </article>
+
+                    <article class="card">
+                        <h3>Mini Oyun</h3>
+                        <p class="muted">İçine küçük soru-cevap gizleyebilirsin.</p>
+                        <a class="btn" href="#notes">Başla</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="notes" class="section alt">
+            <div class="container">
+                <h2>Notlar & Mesajlar</h2>
+                <p>Gün içinde yazdığın kısa notları buraya ekleyebilirsin.</p>
+                <form id="noteForm" class="note-form" onsubmit="return false;">
+                    <label for="noteText">Yeni not</label>
+                    <textarea id="noteText" rows="3" placeholder="Kısa, tatlı, içten..."></textarea>
+                    <div class="form-row">
+                        <button class="btn" id="saveNote">Kaydet</button>
+                        <button class="btn ghost" id="clearNotes">Hepsini Sil</button>
+                    </div>
+                </form>
+                <ul id="notesList" class="notes-list" aria-live="polite"></ul>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>İletişim</h2>
+                <p>Basit iletişim: e-posta / not bırakma.</p>
+                <p class="muted">E-posta: <a href="mailto:ornek@ornek.com">ornek@ornek.com</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> Senin İçin — Özel Sayfa · Tasarım minimal & gizli</p>
+        </div>
+    </footer>
+
+    <!-- Modal: Gizli Mektup -->
+    <div id="letterModal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modalTitle">
+        <div class="modal-panel">
+            <button class="modal-close" id="closeLetter" aria-label="Kapat">✕</button>
+            <h3 id="modalTitle">Gizli Mektup</h3>
+            <p class="modal-body">Burası tamamen senin: içten bir mektup, kısa bir şiir ya da sadece "Seni seviyorum"
+                cümlesi. Fotoğrafa gerek yok; kelimeler yeter.</p>
+            <textarea id="letterText" rows="6" placeholder="Buraya mektubunu yaz..."></textarea>
+            <div class="form-row">
+                <button class="btn" id="saveLetter">Kaydet</button>
+                <button class="btn ghost" id="hideLetter">Gizle</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Şiir -->
+    <div id="poemModal" class="modal" aria-hidden="true">
+        <div class="modal-panel small">
+            <button class="modal-close" id="closePoem" aria-label="Kapat">✕</button>
+            <h4>Şiir</h4>
+            <p id="poemText">Gecenin en sakin köşesinde bir fısıltı, adın gibi hafif, adın gibi sıcak.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
